@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inset
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@color/tv_divider"
+    android:insetTop="0px"
+    android:insetRight="56px"
+    android:insetBottom="0px"
+    android:insetLeft="56px"
+/>

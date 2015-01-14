@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_playbar"
+    android:layout_width="1184px"
+    android:layout_height="128px"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="80px"
+    android:visibility="gone"
+    android:background="@drawable/tv_playbar_bg" >
+    
+    <TextView
+        android:id="@+id/tv_playbar_chn_num"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="40px"
+        android:layout_marginTop="20px"
+        android:layout_width="174px"
+        android:layout_height="35px"
+        android:textSize="32px"
+        android:textColor="#FFFFFF"
+        android:gravity="center" />
+    
+    <TextView
+        android:id="@+id/tv_playbar_chn_name"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="40px"
+        android:layout_marginTop="65px"
+        android:layout_width="174px"
+        android:layout_height="35px"
+        android:textSize="28px"
+        android:textColor="#FFFFFF"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/tv_playbar_epg1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="214px"
+        android:layout_marginTop="8px"
+        android:layout_width="850px"
+        android:layout_height="35px"
+        android:textSize="30px"
+        android:textColor="#FFFFFF" />
+    
+    <TextView
+        android:id="@+id/tv_playbar_time"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="934px"
+        android:layout_marginTop="8px"
+        android:layout_width="204px"
+        android:layout_height="35px"
+        android:textSize="30px"
+        android:textColor="#FFFFFF"
+        android:gravity="right" />
+    
+    <View
+        android:id="@+id/tv_playbar_progress"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="215px"
+        android:layout_marginTop="56px"
+        android:layout_width="922px"
+        android:layout_height="8px"
+        android:background="@drawable/tv_playbar_progress" >
+    </View>
+    
+    <View
+        android:id="@+id/tv_playbar_seek"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="215px"
+        android:layout_marginTop="56px"
+        android:layout_width="0px"
+        android:layout_height="8px"
+        android:background="@drawable/tv_playbar_seek" >
+    </View>
+    
+    <View
+        android:id="@+id/tv_playbar_dot"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="198px"
+        android:layout_marginTop="43px"
+        android:layout_width="34px"
+        android:layout_height="34px"
+        android:background="@drawable/tv_playbar_dot" >
+    </View>
+    
+    <TextView
+        android:id="@+id/tv_playbar_epg2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="214px"
+        android:layout_marginTop="72px"
+        android:layout_width="850px"
+        android:layout_height="30px"
+        android:textSize="26px"
+        android:textColor="#FFFFFF" />
+</RelativeLayout>

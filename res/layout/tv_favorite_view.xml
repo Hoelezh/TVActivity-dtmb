@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_favorite_view"
+    android:background="@drawable/tv_source_bg"
+    android:layout_width="1280px"
+    android:layout_height="131px"
+    android:gravity="center"
+    android:textColor="#FFFFFF"
+    android:textSize="30px"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="92px" />

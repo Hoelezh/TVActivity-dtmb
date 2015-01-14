@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_epg_brief"
+    android:background="@drawable/tv_epg_bg"
+    android:layout_alignParentBottom="true"
+    android:layout_width="620px"
+    android:layout_height="580px" 
+    android:orientation="vertical"
+    android:layout_centerHorizontal="true"
+    android:padding="5px"
+    android:layout_marginBottom="92px">
+    
+    <TextView 
+            android:id="@+id/tv_epg_brief_title"
+            android:layout_width="match_parent"
+            android:layout_height="50px"
+            android:layout_marginLeft="8dp"
+            android:textSize="30px"
+            android:textColor="#FFFFFF" 
+            android:gravity="center"/>
+    
+    <TextView 
+            android:id="@+id/tv_epg_brief_time"
+            android:layout_below="@id/tv_epg_brief_title"
+            android:layout_width="match_parent"
+            android:layout_height="50px"
+            android:layout_marginLeft="8dp"
+            android:textSize="30px"
+            android:textColor="#FFFFFF" />
+    
+    <TextView 
+            android:id="@+id/tv_epg_brief_content"
+            android:layout_below="@id/tv_epg_brief_time"
+            android:layout_width="match_parent"
+            android:layout_height="400px"
+            android:layout_marginLeft="8dp"
+            android:singleLine="false"
+            android:scrollbars="vertical"
+            android:maxLines="12"
+            android:textSize="30px"
+            android:textColor="#FFFFFF" />
+    
+</LinearLayout>

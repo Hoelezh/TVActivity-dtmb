@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_option_list"
+    android:background="@drawable/tv_options_bg"
+    android:layout_width="1280px"
+    android:layout_height="92px"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true" >
+    <ImageView 
+        android:id="@+id/tv_option_focus"
+        android:background="@drawable/tv_option_focus"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_width="322px"
+        android:layout_height="92px" />
+    <LinearLayout
+        android:id="@+id/tv_option_container"
+        android:layout_width="1280px"
+        android:layout_height="92px"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+    </LinearLayout>
+</RelativeLayout>

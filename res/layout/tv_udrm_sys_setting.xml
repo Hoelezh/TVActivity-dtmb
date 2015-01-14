@@ -1,0 +1,157 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tv_udrm_sys_setting"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="200sp"
+    android:layout_marginLeft="330sp"
+    android:layout_marginRight="330sp"
+    android:layout_marginTop="180dp"
+    android:background="@drawable/tv_setting_bg"
+    tools:context="${packageName}.${activityClass}" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="63dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/udrm_watch_class"
+            android:layout_width="match_parent"
+            android:layout_height="70px"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/tv_udrm_button"
+            android:focusable="true"
+            android:orientation="horizontal" >
+
+            <requestFocus />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.4"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="25sp"
+                android:text="@string/rs_watch_glass"
+                android:textColor="@color/tv_white"
+                android:textSize="30px" />
+
+            <ImageView
+                android:layout_width="19px"
+                android:layout_height="40px"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/tv_list_left" />
+
+            <TextView
+                android:id="@+id/tv_udrm_class_value"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.4"
+                android:gravity="center"
+                android:textColor="@color/tv_white"
+                android:textSize="30sp" />
+
+            <ImageView
+                android:layout_width="19sp"
+                android:layout_height="40sp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/tv_list_right" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70sp" >
+
+            <EditText
+                android:id="@+id/tv_udrm_old_pin"
+                android:layout_width="680sp"
+                android:layout_height="match_parent"
+                android:background="@drawable/tv_udrm_button"
+                android:ems="6"
+                android:inputType="numberPassword"
+                android:paddingLeft="340sp" />
+
+            <TextView
+                android:id="@+id/TextView1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignLeft="@+id/editText1"
+                android:layout_alignParentTop="true"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="25sp"
+                android:text="@string/rs_old_pin"
+                android:textColor="@color/tv_white"
+                android:textSize="30px" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="70sp" >
+
+            <EditText
+                android:id="@+id/tv_udrm_new_pin"
+                android:layout_width="680sp"
+                android:layout_height="match_parent"
+                android:background="@drawable/tv_udrm_button"
+                android:ems="6"
+                android:inputType="numberPassword"
+                android:paddingLeft="340sp" >
+            </EditText>
+
+            <TextView
+                android:id="@+id/TextView1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignLeft="@+id/tv_udrm_new_pin"
+                android:layout_alignParentTop="true"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="25sp"
+                android:text="@string/rs_new_pin"
+                android:textColor="@color/tv_white"
+                android:textSize="30px" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70sp" >
+
+            <Button
+                android:id="@+id/udrm_set_cancelbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/tv_udrm_button"
+                android:text="@string/tv_cancelbutton"
+                android:textColor="@color/tv_white"
+                android:textSize="30px" />
+
+            <Button
+                android:id="@+id/udrm_set_savebutton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/tv_udrm_button"
+                android:text="@string/tv_savebutton"
+                android:textColor="@color/tv_white"
+                android:textSize="30px" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/tv_setting_textv2"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="38sp" />
+
+</RelativeLayout>

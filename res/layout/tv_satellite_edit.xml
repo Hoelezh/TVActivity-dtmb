@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="720px"
+    android:layout_height="500px" 
+    android:background="@drawable/tv_search_bg"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:id="@+id/tv_satellite_edit_title"
+        android:textSize="32px"
+        android:layout_width="match_parent"
+        android:layout_height="60px"
+        android:textColor="@color/tv_unselected"
+        android:text="@string/tv_satellite_list"
+        android:gravity="center" />
+    
+    <LinearLayout
+        android:id="@+id/tv_satellite_edit_items"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    
+    <TextView 
+        android:id="@+id/tv_satellite_edit_content"
+        android:textSize="32px"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:textColor="@color/tv_unselected"
+        android:gravity="center"/>
+    
+    <LinearLayout 
+        android:id="@+id/tv_satellite_edit_help"
+        android:layout_width="match_parent"
+        android:layout_height="60px"
+        android:orientation="horizontal"
+        android:gravity="right"
+        android:layout_marginBottom="60px">
+        
+        <TextView 
+            android:id="@+id/tv_satellite_edit_help1"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="32px"
+            android:gravity="center"
+            android:textColor="@color/tv_white"
+           android:text="@string/tv_info_save"/>  
+        <TextView 
+            android:id="@+id/tv_satellite_edit_help2"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="32px"
+            android:gravity="center"
+            android:textColor="@color/tv_white"
+            android:text="@string/tv_info_cancel"/>                  
+    </LinearLayout>
+        
+
+</LinearLayout>

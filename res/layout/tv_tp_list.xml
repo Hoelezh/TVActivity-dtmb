@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="1280px"
+    android:layout_height="720px"
+    android:background="@drawable/tv_search_bg" >
+    
+	<TextView 
+        android:id="@+id/tv_tp_title"
+        android:textSize="32px"
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:textColor="@color/tv_unselected"
+        android:text="@string/tv_tp_list"
+        android:gravity="center" />
+    
+    <LinearLayout 
+        android:id="@+id/tv_tp_header"
+        android:layout_width="800px"
+        android:layout_height="60px"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true" 
+        android:layout_below="@id/tv_tp_title">
+        <ImageView
+            android:id="@+id/tv_tplist_left"
+            android:layout_width="19px"
+            android:layout_height="match_parent"
+            android:src="@drawable/tv_list_left"
+            android:layout_gravity="center_vertical" />
+        
+        <TextView 
+            android:id="@+id/tv_tplist_satname"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textSize="32px"
+            android:gravity="center"
+            android:textColor="@color/tv_white"/>  
+       
+       <ImageView
+            android:id="@+id/tv_tplist_left"
+            android:layout_width="19px"
+            android:layout_height="match_parent"
+            android:src="@drawable/tv_list_right"
+            android:layout_gravity="center_vertical" />
+              
+    </LinearLayout>
+        
+    <LinearLayout
+        android:id="@+id/tv_tp_items"
+        android:orientation="vertical"
+        android:layout_width="800px"
+        android:layout_height="400px"
+        android:layout_centerHorizontal="true" 
+        android:layout_below="@id/tv_tp_header">
+    </LinearLayout>
+    
+    
+    <LinearLayout 
+        android:id="@+id/tv_tp_bar1"
+        android:layout_width="match_parent"
+        android:layout_height="40px"
+        android:paddingLeft="58px"
+	    android:paddingRight="58px"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true" 
+        android:layout_below="@id/tv_tp_items">
+
+        <TextView 
+            android:id="@+id/tv_tp_bar1_name"
+            android:layout_width="200px"
+            android:layout_height="match_parent"
+            android:textSize="32px"
+            android:gravity="center"
+            android:textColor="@color/tv_white"
+            android:text="@string/tv_signal_intensity"/>  
+        
+        <ProgressBar 
+		    android:id="@+id/tv_tp_bar1_bar"
+		    android:layout_width="0dp"
+		    android:layout_height="10px"
+		    android:layout_weight="2"
+		    android:layout_marginLeft="10px"
+		    style="?android:attr/progressBarStyleHorizontal"
+		    android:progressDrawable="@drawable/tuner_status_bar"
+		    android:progress="0"
+		    android:secondaryProgress="0"
+		    android:max="100"
+		    android:layout_gravity="center_vertical"/>
+        
+        <TextView 
+            android:id="@+id/tv_tp_bar1_value"
+            android:layout_width="150px"
+            android:layout_height="match_parent"
+            android:textSize="32px"
+            android:gravity="center"
+            android:textColor="@color/tv_white"/>
+            
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:id="@+id/tv_tp_bar2"
+        android:layout_width="match_parent"
+        android:layout_height="40px"
+        android:orientation="horizontal"
+        android:paddingLeft="58px"
+	    android:paddingRight="58px"
+        android:layout_centerHorizontal="true" 
+        android:layout_below="@id/tv_tp_bar1">
+
+        <TextView 
+            android:id="@+id/tv_tp_bar2_name"
+            android:layout_width="200px"
+            android:layout_height="match_parent"
+            android:textSize="32px"
+            android:gravity="center"
+            android:textColor="@color/tv_white"
+            android:text="@string/tv_signal_quality"/>  
+        
+        <ProgressBar 
+		    android:id="@+id/tv_tp_bar2_bar"
+		    android:layout_width="0dp"
+		    android:layout_height="10px"
+		    android:layout_weight="2"
+		    android:layout_marginLeft="10px"
+		    style="?android:attr/progressBarStyleHorizontal"
+		    android:progressDrawable="@drawable/tuner_status_bar"
+		    android:progress="0"
+		    android:secondaryProgress="0"
+		    android:max="100"
+		    android:layout_gravity="center_vertical"/>
+        
+        <TextView 
+            android:id="@+id/tv_tp_bar2_value"
+            android:layout_width="150px"
+            android:layout_height="match_parent"
+            android:textSize="32px"
+            android:gravity="center"
+            android:textColor="@color/tv_white"/>
+            
+    </LinearLayout>
+    
+    <TextView 
+        android:id="@+id/tv_tp_help"
+        android:textSize="32px"
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:textColor="@color/tv_unselected"
+        android:text="@string/tv_tp_help"
+        android:gravity="center" 
+        android:layout_below="@id/tv_tp_bar2"/>
+</RelativeLayout>

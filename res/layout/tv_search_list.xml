@@ -1,0 +1,14 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center" >
+    <ListView
+        android:id="@+id/tv_search_list"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:dividerHeight="1px"
+        android:divider="@drawable/tv_search_list_divider"
+        android:background="@android:color/transparent"
+        android:listSelector="@drawable/tv_search_list_item_bg" />
+</LinearLayout>

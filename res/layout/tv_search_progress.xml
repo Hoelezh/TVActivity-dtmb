@@ -1,0 +1,84 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="1280px"
+    android:layout_height="720px"
+    android:background="@drawable/tv_search_bg" >
+    
+    <TextView 
+        android:textSize="32px"
+        android:layout_width="match_parent"
+        android:layout_height="110px"
+        android:textColor="@color/tv_unselected"
+        android:text="@string/tv_search_title"
+        android:gravity="center" />
+    
+    <LinearLayout android:id="@+id/tv_search_tab" 
+        android:orientation="vertical"
+        android:layout_width="854px"
+        android:layout_height="572px"
+        android:padding="0dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/tv_search_prg_bg" >
+        <LinearLayout
+            android:orientation="horizontal"  
+            android:layout_width="match_parent"  
+            android:layout_height="75px" >
+            <TextView
+                android:textSize="30px"
+                android:textColor="@color/tv_unselected"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:text="@string/tv_chn_tv"
+                android:gravity="center" />
+            <TextView
+                android:textSize="30px"
+                android:textColor="@color/tv_unselected"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:layout_width="0dp"
+                android:text="@string/tv_chn_radio"
+                android:gravity="center" />
+        </LinearLayout>
+        <ListView
+            android:id="@+id/tv_progress_list"
+            android:layout_width="match_parent"
+            android:layout_height="280px"
+            android:dividerHeight="1px"
+            android:divider="@drawable/tv_search_list_divider"
+            android:paddingTop="15px"
+            android:listSelector="@android:color/transparent"
+            android:background="@android:color/transparent" />
+        <TextView
+            android:id="@+id/tv_message_info"
+            android:layout_width="match_parent"
+            android:layout_height="50px"
+            android:gravity="left|center_vertical"
+            android:textSize="28px"
+            android:paddingLeft="58px"
+            android:textColor="@color/tv_unselected" />
+        <LinearLayout
+	        android:orientation="horizontal"
+	        android:layout_height="50px"
+	        android:paddingLeft="58px"
+	        android:paddingRight="58px"
+	        android:layout_width="match_parent" >
+	        <ProgressBar
+	            android:id="@+id/tv_progress_bar"
+	            android:layout_width="0dp"
+	            android:layout_height="match_parent"
+	            android:layout_weight="8"
+	            android:max="100"
+	            android:paddingTop="20px"
+	            android:paddingBottom="20px"
+	            style="?android:attr/progressBarStyleHorizontal" />
+	        <TextView
+	            android:id="@+id/tv_progress_view"
+	            android:layout_height="match_parent"
+	            android:layout_width="0dp"
+	            android:layout_weight="1"
+	            android:textSize="28px"
+	            android:gravity="right|center_vertical" />
+	    </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

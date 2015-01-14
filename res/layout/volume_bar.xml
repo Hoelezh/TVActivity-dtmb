@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="351px"
+    android:layout_height="62px"
+    android:orientation="horizontal"
+    android:background="@drawable/vol_bg">
+
+	<ImageView 
+	    android:id="@+id/vol_bar_id_speaker"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:background="@drawable/vol_speaker"
+	    android:layout_gravity="center_vertical"
+	    android:layout_marginLeft="10px"/>
+	
+	<ProgressBar 
+	    android:id="@+id/vol_bar_id_progress"
+	    android:layout_width="217px"
+	    android:layout_height="10px"
+	    android:layout_marginLeft="10px"
+	    style="?android:attr/progressBarStyleHorizontal"
+	    android:progressDrawable="@drawable/volume_progressbar_style"
+	    android:progress="0"
+	    android:secondaryProgress="0"
+	    android:max="30"
+	    android:layout_gravity="center_vertical"/>
+	
+	<TextView 
+	    android:id="@+id/vol_bar_id_volume"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:textSize="24px"
+	    android:text="24"
+	    android:layout_gravity="center_vertical"
+	    android:layout_marginLeft="15px"
+	    />
+
+</LinearLayout>

@@ -1,0 +1,6 @@
+#ifndef _ALI_NETLINK_COMMON_H_
+#define _ALI_NETLINK_COMMON_H_
+
+#define NETLINK_ALITRANSPORT 31
+
+#endif

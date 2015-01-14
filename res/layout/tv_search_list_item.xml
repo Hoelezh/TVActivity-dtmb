@@ -1,0 +1,28 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_height="65px"
+    android:layout_width="match_parent" >
+    <TextView
+        android:id="@+id/text_field"
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:textSize="28px"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="80px"
+        android:textColor="@color/tv_search_txt" />
+    <TextView
+        android:id="@+id/value_field"
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:textSize="28px"
+        android:gravity="center"
+        android:textColor="@color/tv_search_txt" />
+    <com.nmp.dvbplayer.tv.search.TVNumPicker
+        android:id="@+id/val_picker"
+        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:gravity="center" />
+</LinearLayout>

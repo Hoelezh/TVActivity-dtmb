@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="1280px"
+    android:layout_height="720px"
+    android:background="@drawable/tv_search_bg" >
+    
+    <TextView 
+        android:id="@+id/tv_satellite_title"
+        android:textSize="32px"
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:textColor="@color/tv_unselected"
+        android:text="@string/tv_satellite_list"
+        android:gravity="center" />
+    
+    <LinearLayout 
+        android:id="@+id/tv_satellite_header"
+        android:layout_width="854px"
+        android:layout_height="60px"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true" 
+        android:gravity="right"
+        android:layout_below="@id/tv_satellite_title">
+        
+        <TextView 
+            android:id="@+id/tv_satellite_lnb1"
+            android:layout_width="80px"
+            android:layout_height="match_parent"
+            android:textSize="32px"
+            android:gravity="center"
+            android:textColor="@color/tv_white"
+           android:text="@string/tv_lbn1"/>  
+        <TextView 
+            android:id="@+id/tv_satellite_lnb2"
+            android:layout_width="80px"
+            android:layout_height="match_parent"
+            android:textSize="32px"
+            android:gravity="center"
+            android:visibility="invisible"
+            android:textColor="@color/tv_white"
+            android:text="@string/tv_lbn2"/>                  
+    </LinearLayout>
+        
+    <LinearLayout
+        android:id="@+id/tv_satellite_items"
+        android:orientation="vertical"
+        android:layout_width="854px"
+        android:layout_height="480px"
+        android:layout_centerHorizontal="true" 
+        android:layout_below="@id/tv_satellite_header">
+    </LinearLayout>
+    
+    <TextView 
+        android:id="@+id/tv_satellite_help"
+        android:textSize="32px"
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:textColor="@color/tv_unselected"
+        android:text="@string/tv_satellite_help"
+        android:gravity="center" 
+        android:layout_below="@id/tv_satellite_items"/>
+
+</RelativeLayout>

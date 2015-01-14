@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="tv_white">#FFFFFF</color>
+    <color name="tv_yellow">#FFFF00</color>
+    <color name="tv_selected">#FFFFFF</color>
+    <color name="tv_unselected">#9E9E9E</color>
+    <color name="tv_divider">#144662</color>
+    <color name="black_overlay">#66000000</color>
+</resources>
