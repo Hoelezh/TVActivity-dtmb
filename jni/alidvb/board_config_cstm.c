@@ -765,11 +765,6 @@ void gospell_get_tsi_dmx_config(struct Ali_DmxSrcCtrlStreamParam  *DmxSrcCtrl)
 		{
 			DmxSrcCtrl->InputPortAttr = 0x8f;
 		}
-		else if (board_type == BOARD_DTMB)
-		{
-			DmxSrcCtrl->InputPortAttr = 0x8f;
-		}
-
 		else
 		{
 			DmxSrcCtrl->InputPortAttr = 0x8f;
@@ -801,7 +796,7 @@ void gospell_nim_init(void)
 	if (board_type == BOARD_DVBC)
 	{
 		PRINT_DEBUG("Select GOSPELL DVBC Nim\n");
-		qam_init_tuner(0, 1);
+		qam_init_tuner(0);
 
 	}
 	else if (board_type == BOARD_DVBS2)
@@ -809,11 +804,6 @@ void gospell_nim_init(void)
         PRINT_DEBUG("Select GOSPELL DVBS2 Nim\n");
         gospell_nim_rest(GPIO_DVBS_NIM_REST);
         nim_init_s2(0);
-	}
-	else if (board_type == BOARD_DTMB)
-	{
-        PRINT_DEBUG("Select GOSPELL DTMB Nim\n");
-		qam_init_tuner(2, 1);
 	}
 	else
 	{

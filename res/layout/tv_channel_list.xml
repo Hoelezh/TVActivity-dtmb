@@ -1,50 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout 
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/tv_chn_list"
     android:layout_width="396px"
     android:layout_height="720px"
     android:background="@drawable/tv_list_bg"
     android:orientation="vertical"
     android:visibility="gone" >
-    <LinearLayout 
+
+    <LinearLayout
         android:id="@+id/tv_list_header"
         android:layout_width="match_parent"
         android:layout_height="98px"
         android:orientation="horizontal" >
-        <ImageView 
-            android:src="@drawable/tv_list_left"
+
+        <ImageView
             android:id="@+id/tv_list_left"
             android:layout_width="19px"
             android:layout_height="40px"
             android:layout_gravity="left|top"
-            android:layout_marginTop="26px"
             android:layout_marginLeft="52px"
-            android:visibility="invisible"
-            android:contentDescription="@string/image_description" />
-        <TextView 
+            android:layout_marginTop="26px"
+            android:contentDescription="@string/image_description"
+            android:src="@drawable/tv_list_left"
+            android:visibility="invisible" />
+
+        <TextView
             android:id="@+id/tv_list_group"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="32px"
             android:gravity="center"
+            android:paddingTop="22px"
             android:textColor="@color/tv_white"
-            android:paddingTop="22px" />
-        <ImageView 
-            android:src="@drawable/tv_list_right"
+            android:textSize="32px" />
+
+        <ImageView
             android:id="@+id/tv_list_right"
             android:layout_width="19px"
             android:layout_height="40px"
             android:layout_gravity="right|top"
-            android:layout_marginTop="26px"
             android:layout_marginRight="80px"
-            android:visibility="invisible"
-            android:contentDescription="@string/image_description" />
+            android:layout_marginTop="26px"
+            android:contentDescription="@string/image_description"
+            android:src="@drawable/tv_list_right"
+            android:visibility="invisible" />
     </LinearLayout>
-    <LinearLayout 
+
+    <LinearLayout
         android:id="@+id/tv_list_items"
         android:layout_width="368px"
         android:layout_height="612px"
         android:orientation="vertical" />
+
 </LinearLayout>

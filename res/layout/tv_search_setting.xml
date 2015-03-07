@@ -2,44 +2,52 @@
     android:layout_width="1280px"
     android:layout_height="720px"
     android:background="@drawable/tv_search_bg" >
-    
-    <TextView 
-        android:textSize="32px"
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="110px"
-        android:textColor="@color/tv_unselected"
+        android:gravity="center"
         android:text="@string/tv_search_title"
-        android:gravity="center" />
-    
-    <TabHost android:id="@+id/tv_search_tab"  
+        android:textColor="@color/tv_unselected"
+        android:textSize="32px" />
+
+    <TabHost
+        android:id="@+id/tv_search_tab"
         android:layout_width="854px"
         android:layout_height="572px"
-        android:padding="0dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/tv_search_opt_bg" >
-        <LinearLayout  
-            android:orientation="vertical"  
-            android:layout_width="match_parent"  
-            android:layout_height="match_parent" >
-            <TabWidget android:id="@android:id/tabs"   
-	            android:orientation="horizontal"  
-	            android:layout_width="match_parent"  
-	            android:layout_height="45px" >
+        android:background="@drawable/tv_search_opt_bg"
+        android:padding="0dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="45px"
+                android:orientation="horizontal" >
             </TabWidget>
-            <FrameLayout android:id="@android:id/tabcontent"
-                android:layout_width="match_parent"  
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
                 android:layout_height="410px" >
             </FrameLayout>
+
             <Button
                 android:id="@+id/tv_search_btn"
                 android:layout_width="185px"
                 android:layout_height="35px"
+                android:layout_gravity="center"
                 android:background="@drawable/tv_search_btn_bg"
-                android:textColor="@color/tv_search_txt"
-                android:textSize="28px"
                 android:text="@string/tv_search_btn_txt"
-                android:layout_gravity="center" />
-         </LinearLayout>  
+                android:textColor="@color/tv_search_txt"
+                android:textSize="28px" />
+        </LinearLayout>
     </TabHost>
+
 </RelativeLayout>

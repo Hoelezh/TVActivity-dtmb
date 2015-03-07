@@ -1,48 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/tv_source_list"
-    android:background="@drawable/tv_source_bg"
     android:layout_width="1280px"
     android:layout_height="131px"
     android:layout_alignParentBottom="true"
     android:layout_centerHorizontal="true"
-    android:layout_marginBottom="92px" 
-    android:focusable="true">
-    <ImageView 
+    android:layout_marginBottom="92px"
+    android:background="@drawable/tv_source_bg"
+    android:focusable="true" >
+
+    <ImageView
         android:id="@+id/tv_source_focus"
-        android:src="@drawable/tv_source_focus"
+        android:layout_width="232px"
+        android:layout_height="56px"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_width="232px"
-        android:layout_height="56px" />
+        android:src="@drawable/tv_source_focus" />
+
     <LinearLayout
         android:layout_width="1280px"
         android:layout_height="191px"
         android:orientation="horizontal" >
-        <LinearLayout 
-            android:orientation="vertical"
+
+        <LinearLayout
             android:layout_width="60px"
             android:layout_height="match_parent"
-            android:gravity="right|center_vertical">
+            android:gravity="right|center_vertical"
+            android:orientation="vertical" >
+
             <ImageView
                 android:id="@+id/tv_src_left"
                 android:layout_width="19px"
                 android:layout_height="40px"
                 android:src="@drawable/tv_list_left" />
         </LinearLayout>
+
         <LinearLayout
-	        android:id="@+id/tv_source_texts"
-	        android:layout_height="match_parent"
-	        android:layout_width="1160px"
-	        android:gravity="center_vertical"
-	        android:orientation="horizontal" >
-	    </LinearLayout>
-	    <LinearLayout 
-            android:orientation="vertical"
+            android:id="@+id/tv_source_texts"
+            android:layout_width="1160px"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="60px"
             android:layout_height="match_parent"
-            android:gravity="left|center_vertical">
+            android:gravity="left|center_vertical"
+            android:orientation="vertical" >
+
             <ImageView
                 android:id="@+id/tv_src_right"
                 android:layout_width="19px"
@@ -50,4 +56,5 @@
                 android:src="@drawable/tv_list_right" />
         </LinearLayout>
     </LinearLayout>
+
 </RelativeLayout>

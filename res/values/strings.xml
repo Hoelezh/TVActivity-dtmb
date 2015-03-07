@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">电视直播</string>
     <string name="image_description"></string>
     <string name="tv_fav_name">常看频道</string>
@@ -34,18 +35,15 @@
     <string name="tv_setting_snd_0">立体声</string>
     <string name="tv_setting_snd_1">左声道</string>
     <string name="tv_setting_snd_2">右声道</string>
-
     <string name="tv_search_title">节目搜索</string>
     <string name="tv_search_auto">自动搜台</string>
     <string name="tv_search_manual">手动搜台</string>
     <string name="tv_search_full">全频搜台</string>
-    <string name="tv_search_btn_txt">开始搜台</string>    
+    <string name="tv_search_btn_txt">开始搜台</string>
     <string name="tv_search_freq">频率</string>
     <string name="tv_search_sym">符号率</string>
     <string name="tv_search_qam">调制方式</string>
     <string name="tv_search_net">网络搜索</string>
-    <string name="tv_search_band_width">频宽</string>
-    <string name="tv_search_search_mode">搜索模式</string>
     <string name="tv_search_beg_freq">开始频率</string>
     <string name="tv_search_end_freq">结束频率</string>
     <string name="tv_chn_tv">电视频道</string>
@@ -101,8 +99,8 @@
     <string name="tv_search_change_tp">切换频点  </string>
     <string name="tv_search_has_get">已经搜索到:</string>
     <string name="tv_search_programs">个节目</string>
-    <string name="tv_signal_intensity">信号强度</string>  
-    <string name="tv_signal_quality">信号质量</string> 
+    <string name="tv_signal_intensity">信号强度</string>
+    <string name="tv_signal_quality">信号质量</string>
     <string name="rs_ippv_id">ippv标识号</string>
     <string name="rs_order_point">订购点数</string>
     <string name="rs_start_time">开始时间</string>

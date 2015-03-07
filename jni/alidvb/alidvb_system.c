@@ -191,7 +191,7 @@ int nim_init_s2(unsigned int demod_num)
 	return ret;
 }
 
-static int qam_tuner_attatch(int demod_index, int tuner_id, enum nim_dvbc_mode is_j83b, int fe_type)
+static int qam_tuner_attatch(int demod_index, int tuner_id, enum nim_dvbc_mode is_j83b)
 {
 	struct QAM_TUNER_CONFIG_API QAM_Tuner_Cfg;
 	unsigned char NIM_MODE = 0;
@@ -361,10 +361,11 @@ static int qam_tuner_attatch(int demod_index, int tuner_id, enum nim_dvbc_mode i
 				QAM_Tuner_Cfg.tuner_config_data.IF_AGC_MAX           = 0xFE;
 				QAM_Tuner_Cfg.tuner_config_data.IF_AGC_MIN           = 0x01;
 				QAM_Tuner_Cfg.tuner_config_data.AGC_REF              = 0x80;
-				if(1 == fe_type)
-					QAM_Tuner_Cfg.tuner_config_ext.c_tuner_special_config = (0x80|0x04|0x01); // bit7:DTMB/DVBC Mode,bit2:IQ swap,bit0:RF AGC is disabled
-				else 
-					QAM_Tuner_Cfg.tuner_config_ext.c_tuner_special_config = 0x01; // RF AGC is disabled
+#ifdef SUPPORT_DTMB
+				QAM_Tuner_Cfg.tuner_config_ext.c_tuner_special_config = (0x80|0x04|0x01); // bit7:DTMB/DVBC Mode,bit2:IQ swap,bit0:RF AGC is disabled
+#else
+				QAM_Tuner_Cfg.tuner_config_ext.c_tuner_special_config = 0x01; // RF AGC is disabled
+#endif
 				QAM_Tuner_Cfg.tuner_config_ext.c_chip                 = Tuner_Chip_NXP;
 				QAM_Tuner_Cfg.tuner_config_ext.c_tuner_agc_top        = 1;//7; /*1 for single AGC, 7 for dual AGC */
 				QAM_Tuner_Cfg.tuner_config_ext.c_tuner_base_addr      = 0xC0;
@@ -374,17 +375,19 @@ static int qam_tuner_attatch(int demod_index, int tuner_id, enum nim_dvbc_mode i
 				QAM_Tuner_Cfg.qam_mode                               = NIM_MODE | NIM_SAMPLE;
 				if (NIM_DVBC_J83B_MODE == NIM_MODE)
 				{
-					if(1 == fe_type)
-						QAM_Tuner_Cfg.tuner_config_ext.w_tuner_if_freq    = 36150;
-					else
-						QAM_Tuner_Cfg.tuner_config_ext.w_tuner_if_freq    = 5000;
+#ifdef SUPPORT_DTMB
+					QAM_Tuner_Cfg.tuner_config_ext.w_tuner_if_freq    = 36150;
+#else
+					QAM_Tuner_Cfg.tuner_config_ext.w_tuner_if_freq    = 5000;
+#endif
 				}
 				else
 				{
-					if(1 == fe_type)
-						QAM_Tuner_Cfg.tuner_config_ext.w_tuner_if_freq	  = 36150;
-					else
-						QAM_Tuner_Cfg.tuner_config_ext.w_tuner_if_freq	  = 5000;
+#ifdef SUPPORT_DTMB
+					QAM_Tuner_Cfg.tuner_config_ext.w_tuner_if_freq	  = 36150;
+#else
+					QAM_Tuner_Cfg.tuner_config_ext.w_tuner_if_freq	  = 5000;
+#endif
 				}
 				QAM_Tuner_Cfg.tuner_config_ext.i2c_type_id           = I2C_FOR_TUNER;
 				break;
@@ -424,11 +427,7 @@ static int qam_tuner_attatch(int demod_index, int tuner_id, enum nim_dvbc_mode i
 
 }
 
-/*
-fe_type: 0==dvbc, 1==dtmb ...
-*/
-
-int qam_init_tuner(int demod_index, int fe_type)
+int qam_init_tuner(int demod_index)
 {
 	int ret=0;
 	int demod_count = 2;
@@ -460,11 +459,12 @@ int qam_init_tuner(int demod_index, int fe_type)
 
 	for(j=0;j< tuner_count;j++)
 	{
-		 qam_tuner_attatch(demod_index,tuner_id[j],NIM_DVBC_J83AC_MODE, fe_type);	//DCT70701
-		 if(1 == fe_type)
-    	 	nim_dev = (struct nim_device *)dev_get_by_name("NIM_ATBM");
-		 else
-    	 	nim_dev = (struct nim_device *)dev_get_by_name("NIM_QAM_S3202");
+		 qam_tuner_attatch(demod_index,tuner_id[j],NIM_DVBC_J83AC_MODE);	//DCT70701
+#ifdef SUPPORT_DTMB
+    	 nim_dev = (struct nim_device *)dev_get_by_name("NIM_ATBM");
+#else
+    	 nim_dev = (struct nim_device *)dev_get_by_name("NIM_QAM_S3202");
+#endif
 	     ret = nim_tunerself_adaption(nim_dev);
 	     if(ret>=0)
 	     {
@@ -750,116 +750,6 @@ static void yinhe_pinmux_config(void)
 }
 #endif
 
-
-
-static int nim_lock_test()
-{
-	int type = 0;
-	type = gospell_get_board_type();
-
-	T_NODE t_node;
-	S_NODE s_node;
-
-	UINT32 start_ticket = 0;
-
-	UINT8 lock_stat = 0, timeout = 2, cnt = 20;
-
-
-	struct ft_antenna antenna;
-
-	union ft_xpond xponder;
-	struct nim_device *nim = dev_get_by_id(HLD_DEV_TYPE_NIM, 0);
-
-	struct NIM_CHANNEL_CHANGE nim_param;
-
-	memset(&xponder, 0, sizeof(union ft_xpond));
-	memset(&t_node, 0, sizeof(T_NODE));
-	memset(&s_node, 0, sizeof(S_NODE));
-
-	return 0;
-
-
-	if(type == BOARD_DVBS2)
-	{
-		xponder.s_info.type =  t_node.ft_type;
-		xponder.s_info.frq = t_node.frq;
-		xponder.s_info.sym =  t_node.sym;
-		xponder.s_info.pol =  t_node.pol;
-
-		MEMSET(&antenna, 0, sizeof(struct ft_antenna));
-		sat2antenna(&s_node, &antenna);	
-
-		
-		frontend_set_antenna(nim, &antenna, &xponder, 1);
-		frontend_set_nim(nim, &antenna, &xponder, 1);
-
-	}
-	else if(type == BOARD_DVBC)
-	{
-		xponder.c_info.type = FRONTEND_TYPE_C;
-		xponder.c_info.frq = t_node.frq;
-		xponder.c_info.sym = t_node.sym;
-		xponder.c_info.modulation = t_node.modulation;
-		frontend_set_nim(nim, NULL,&xponder, 1);
-
-	}
-	else if(type == BOARD_DTMB)
-	{
-
-		unsigned short RegValue;
-		unsigned int Reg32Value;
-
-		t_node.frq = 706 * 100;
-		t_node.bandwidth = 8;
-		
-		xponder.t_info.tp_id = t_node.tp_id;
-		xponder.t_info.type = FRONTEND_TYPE_T;
-		xponder.t_info.frq = t_node.frq;
-		xponder.t_info.sym = t_node.sym;
-		xponder.t_info.modulation = t_node.modulation;
-		xponder.t_info.band_width = t_node.bandwidth*1000;
-		xponder.t_info.fft_mode = t_node.FFT;
-		xponder.t_info.guard_intl = t_node.guard_interval;
-		xponder.t_info.fec = t_node.FEC_inner; //ft->xpond.t_info.pol
-		xponder.t_info.inverse = t_node.inverse;
-
-		//frontend_set_nim(nim, NULL,&xponder, 1);	
-
-		nim_param.sym = xponder.t_info.sym;
-		nim_param.modulation = xponder.t_info.modulation;
-		nim_param.bandwidth = xponder.t_info.band_width;
-		nim_param.freq = xponder.t_info.frq;
-
-		nim_ioctl_ext(nim, NIM_DRIVER_CHANNEL_CHANGE, (void *)(&nim_param));
-		
-		while((!lock_stat) && (cnt--))
-		{
-			UTIDriverReadRegU16(0x880, &RegValue);
-			SYSTEM_ERROR("Reg 0x880 = 0x%x\n", RegValue);
-			
-			start_ticket = osal_get_tick();
-			while( osal_get_tick() - start_ticket < timeout );
-			{
-				nim_get_lock(nim, &lock_stat);
-				SYSTEM_ERROR("frontend_set_nim:lock_stat=%d\n",lock_stat);
-				osal_task_sleep(1000);
-			}
-		}
-
-
-
-		
-	}
-	else
-	{
-		SYSTEM_DEBUG("%s,%d: unknown board type",__FUNCTION__,__LINE__);
-	}
-
-	return 0;
-
-}
-
-
 static void system_devices_init(void)
 {
     struct QAM_TUNER_CONFIG_API tuner_config;
@@ -932,7 +822,7 @@ static void system_devices_init(void)
     /* attach nim dev */
 #ifdef SUPPORT_DTMB
     SYSTEM_DEBUG("Select DTMB Nim\n");
-    qam_init_tuner(2, 1);
+    qam_init_tuner(2);
 
 #elif defined(SUPPORT_DEMO_DVBS2)
 	SYSTEM_DEBUG("Select DVBS2 Nim\n");
@@ -1041,9 +931,6 @@ static void system_devices_init(void)
 #endif
 	SYSTEM_DEBUG("system devices init ok!\n");
 
-	nim_lock_test();
-
-
 	return;
 }
 
@@ -1089,8 +976,6 @@ void Db_default()
 	amsdb_create_view(TYPE_TP_NODE, VIEW_SINGLE_SAT, 1);
 	amsdb_create_view(TYPE_PROG_NODE, VIEW_ALL | PROG_TVRADIO_MODE, 0);
 }
-
-
 static int system_modules_init(void)
 {
     struct pub_module_config pub_config;

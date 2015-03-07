@@ -140,11 +140,6 @@ public class TVSearchSetting extends Activity implements TabContentFactory {
 //		this.mParams.put(Tab3, new TVFullSearch(this));
 			this.mParams.put(Tab3, new TVSingleSatSearch(this));
 		}
-		else if(this.dvbType == BOARD_DTMB) {
-			this.mParams.put(Tab1, new TVAutoSearch_DTMB(this));
-			this.mParams.put(Tab2, new TVManualSearch_DTMB(this));
-			this.mParams.put(Tab3, new TVFullSearch_DTMB(this));	
-		}
 		else {
 			this.mParams.put(Tab1, new TVAutoSearch(this));
 			this.mParams.put(Tab2, new TVManualSearch(this));

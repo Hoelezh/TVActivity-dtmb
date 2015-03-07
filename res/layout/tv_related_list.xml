@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/tv_related_list"
-    android:background="@drawable/tv_source_bg"
     android:layout_width="1280px"
     android:layout_height="233px"
     android:layout_alignParentBottom="true"
     android:layout_centerHorizontal="true"
-    android:layout_marginBottom="92px" >
-    <View 
+    android:layout_marginBottom="92px"
+    android:background="@drawable/tv_source_bg" >
+
+    <View
         android:id="@+id/tv_related_focus"
-        android:background="@drawable/tv_related_focus"
+        android:layout_width="180px"
+        android:layout_height="233px"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_width="180px"
-        android:layout_height="233px" />
+        android:background="@drawable/tv_related_focus" />
+
     <LinearLayout
         android:id="@+id/tv_related_images"
         android:layout_width="1280px"
@@ -22,4 +23,5 @@
         android:gravity="center"
         android:orientation="horizontal" >
     </LinearLayout>
+
 </RelativeLayout>

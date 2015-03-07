@@ -985,25 +985,13 @@ int ALiDVB_SearchStart(ALiDVB_SearchParam *param, ALiDVB_SearchNotifyFn callback
 		asp.band[0].as_from = param->frequency_from;
 		asp.band[0].as_to = param->frequency_to;
 		asp.band[0].bandwidth = param->bandwidth;
-		asp.band[0].ft_param.c_info.sym = param->symbol_rate;
-		asp.band[0].ft_param.c_info.modulation = param->modulation;
+	asp.band[0].ft_param.c_info.sym = param->symbol_rate;
+	asp.band[0].ft_param.c_info.modulation = param->modulation;
 		asp.search_config.nit_method = NIT_METHOD_NONE;
-		asp.band_cnt = 1;
+	asp.band_cnt = 1;
 		asp.as_sat_cnt = 1;
 		asp.sat_ids[0] = 1;
 	}
-	else if( asp.as_frontend_type == FRONTEND_TYPE_T )
-	{
-		asp.band[0].as_from = param->frequency_from;
-		asp.band[0].as_to = param->frequency_to;
-		asp.band[0].bandwidth = param->bandwidth;
-		asp.search_config.nit_method = NIT_METHOD_NONE;
-		asp.band_cnt = 1;
-		asp.as_sat_cnt = 1;
-		asp.sat_ids[0] = 1;
-	}
-
-	
 
 	if (param->nit_search)
 	{

@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="115px"
     android:layout_height="155px"
     android:layout_margin="33px" >
-    <ImageView 
+
+    <ImageView
         android:id="@+id/tv_related_pic"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="fitXY" />
-    <TextView 
+
+    <TextView
         android:id="@+id/tv_related_name"
         android:layout_width="match_parent"
         android:layout_height="30px"
+        android:layout_alignBottom="@id/tv_related_pic"
+        android:background="#AA000000"
         android:gravity="center"
         android:singleLine="true"
-        android:background="#AA000000"
         android:textColor="#FFFFFF"
-        android:textSize="20px"
-        android:layout_alignBottom="@id/tv_related_pic" />
+        android:textSize="20px" />
+
 </RelativeLayout>

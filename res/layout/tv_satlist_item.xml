@@ -3,35 +3,41 @@
     android:layout_width="854px"
     android:layout_height="50px"
     android:orientation="horizontal" >
-	<TextView 
+
+    <TextView
         android:id="@+id/tv_satlist_item_id"
-        android:textSize="30px"
+        android:layout_width="90px"
         android:layout_height="38px"
-        android:layout_width="90px" />
-	<TextView 
+        android:textSize="30px" />
+
+    <TextView
         android:id="@+id/tv_satlist_item_name"
-        android:textSize="30px"
+        android:layout_width="450px"
         android:layout_height="38px"
-        android:layout_width="450px"/>
-	<TextView 
+        android:textSize="30px" />
+
+    <TextView
         android:id="@+id/tv_satlist_item_orbit"
-        android:textSize="30px"
+        android:layout_width="150px"
         android:layout_height="38px"
-        android:layout_width="150px"/>
+        android:textSize="30px" />
+
     <ImageView
         android:id="@+id/tv_satlist_item_lnb1"
-       android:layout_height="32px"
         android:layout_width="80px"
+        android:layout_height="32px"
         android:layout_marginTop="9px"
+        android:contentDescription="@string/image_description"
         android:src="@drawable/tv_list_item_fav"
-        android:visibility="invisible"
-        android:contentDescription="@string/image_description" />
+        android:visibility="invisible" />
+
     <ImageView
         android:id="@+id/tv_satlist_item_lnb2"
-       android:layout_height="32px"
         android:layout_width="80px"
+        android:layout_height="32px"
         android:layout_marginTop="9px"
+        android:contentDescription="@string/image_description"
         android:src="@drawable/tv_list_item_fav"
-        android:visibility="invisible"
-        android:contentDescription="@string/image_description"  />
+        android:visibility="invisible" />
+
 </LinearLayout>

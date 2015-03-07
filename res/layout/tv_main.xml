@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout 
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/tv_main"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     tools:context=".tv.TVActivity" >
+
     <com.nmp.dvbplayer.tv.TVPlayerView
         android:id="@+id/tv_player_view"
-        android:layout_centerInParent="true"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true" />
+
     <TextView
         android:id="@+id/tv_udrmosd"
         android:layout_width="874px"
@@ -27,42 +28,47 @@
         android:id="@+id/tv_dialog"
         android:layout_width="474px"
         android:layout_height="272px"
-        android:padding="50px"
-        android:textSize="30px"
+        android:layout_centerInParent="true"
         android:background="@drawable/tv_dialog_bg"
-        android:visibility="gone"
-        android:textColor="@color/tv_white"
         android:gravity="left|center_vertical"
-        android:layout_centerInParent="true" />
+        android:padding="50px"
+        android:textColor="@color/tv_white"
+        android:textSize="30px"
+        android:visibility="gone" />
+
     <RelativeLayout
         android:id="@+id/tv_player_loading"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true" >
-        <ProgressBar 
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="?android:attr/progressBarStyleLarge" />
-        <TextView 
+            android:layout_height="wrap_content" />
+
+        <TextView
             android:id="@+id/tv_loading_percent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
             android:gravity="center"
             android:textColor="#FFFFFF"
-            android:textSize="20sp"
-            android:layout_centerInParent="true" />
+            android:textSize="20sp" />
     </RelativeLayout>
-    <TextView 
+
+    <TextView
         android:id="@+id/tv_chn_number"
         android:layout_width="150px"
         android:layout_height="80px"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="50px"
         android:layout_marginRight="80px"
-        android:textSize="60px"
-        android:textColor="@color/tv_white"        
-        android:visibility="gone"
+        android:layout_marginTop="50px"
+        android:background="@drawable/tv_chn_num_bg"
         android:gravity="center"
-        android:background="@drawable/tv_chn_num_bg" />
+        android:textColor="@color/tv_white"
+        android:textSize="60px"
+        android:visibility="gone" />
+
 </RelativeLayout>
